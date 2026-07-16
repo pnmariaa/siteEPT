@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Login e Cadastro - Currículos 3º CPM</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnX9Qsb-XcUQ0ERW8JAWr9_ZJSJy-luXU40A&s">
+          <p>Currículos 3º CPM</p>
+        </div>
+
+        <div class="menu">
+          <a href="index.html">Início</a>
+          <a href="curriculo.html">Criar Currículo</a>
+          <a href="vagas.html">Ver Vagas</a>
+          <a href="certificados.html">Certificados</a>
+          <a class="ativo" href="login.html">Login</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="auth-area">
+        <div class="auth-texto">
+          <h1>Acesse sua conta</h1>
+          <p>
+            Entre para salvar seu currículo, acompanhar vagas e organizar seus certificados.
+          </p>
+        </div>
+
+        <div class="auth-card">
+          <div class="auth-tabs">
+            <button class="auth-tab ativo" type="button" data-auth-tab="login">Login</button>
+            <button class="auth-tab" type="button" data-auth-tab="cadastro">Cadastro</button>
+          </div>
+
+          <form class="auth-form ativo" id="form-login">
+            <h2>Entrar</h2>
+
+            <label for="login-email">E-mail</label>
+            <input id="login-email" type="email" placeholder="seuemail@exemplo.com" required>
+
+            <label for="login-senha">Senha</label>
+            <input id="login-senha" type="password" placeholder="Digite sua senha" required>
+
+            <button type="submit">Entrar</button>
+            <p class="auth-msg" id="login-msg"></p>
+          </form>
+
+          <form class="auth-form" id="form-cadastro">
+            <h2>Criar cadastro</h2>
+
+            <label for="cadastro-nome">Nome completo</label>
+            <input id="cadastro-nome" type="text" placeholder="Seu nome" required>
+
+            <label for="cadastro-email">E-mail</label>
+            <input id="cadastro-email" type="email" placeholder="seuemail@exemplo.com" required>
+
+            <label for="cadastro-turma">Turma</label>
+            <input id="cadastro-turma" type="text" placeholder="Ex: 3A" required>
+
+            <label for="cadastro-senha">Senha</label>
+            <input id="cadastro-senha" type="password" placeholder="Mínimo de 6 caracteres" minlength="6" required>
+
+            <button type="submit">Cadastrar</button>
+            <p class="auth-msg" id="cadastro-msg"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <h3>Currículos 3º CPM</h3>
+          <p>
+            Plataforma desenvolvida para auxiliar alunos na criação de currículos,
+            busca por oportunidades e acesso a cursos gratuitos.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Links</h3>
+          <a href="index.html">Início</a>
+          <a href="curriculo.html">Criar Currículo</a>
+          <a href="vagas.html">Vagas</a>
+          <a href="certificados.html">Certificados</a>
+          <a href="login.html">Login</a>
+        </div>
+
+        <div class="footer-contato">
+          <h3>Contato</h3>
+          <p>📧 curriculos3cpm@email.com</p>
+          <p>📍 3º CPM</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <p class="copyright">
+        © 2026 Currículos 3º CPM - Todos os direitos reservados.
+      </p>
+    </footer>
+
+    <button class="chatbot"></button>
+    <script src="login.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="modo escuro e claro (botão)/main.js"></script>
+  </body>
+</html>
