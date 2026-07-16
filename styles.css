@@ -59,6 +59,55 @@ nav{
   font-weight: bold;
 }
 
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#043175;
+  padding:15px 30px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo img{
+  width:60px;
+  height:60px;
+  border-radius:100%;
+}
+
+.logo p{
+  color:white;
+  font-size:22px;
+  font-weight:bold;
+}
+
+.menu{
+  display:flex;
+  gap:20px;
+}
+
+.menu a{
+  color:white;
+  text-decoration:none;
+  background:#1565c0;
+  padding:10px 15px;
+  border-radius:15px;
+}
+
+.menu a:hover{
+  background:#62a294;
+}
+
+.menu a.ativo{
+  background-color: #62a294;
+  font-weight: bold;
+}
+
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 /* BANNER */
