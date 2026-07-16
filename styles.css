@@ -441,3 +441,79 @@ body.dark-mode #cb-panel #cb-send{
   background: #16223A;
   color: #fff;
 }
+
+/* ================= TELA DE LOGIN ================= */
+.auth-area {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.auth-texto {
+  max-width: 450px;
+}
+
+.auth-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.auth-tab {
+  flex: 1;
+  background: #e2e8f0;
+  color: #334155;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.auth-tab.ativo {
+  background: #043175;
+  color: white;
+}
+
+.auth-form {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form.ativo {
+  display: flex;
+}
+
+.auth-msg {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #1565c0;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Ajuste no modo escuro para o login */
+body.dark-mode .auth-card {
+  background: #2b2b2b;
+}
+body.dark-mode .auth-tab {
+  background: #374151;
+  color: #fff;
+}
+body.dark-mode .auth-tab.ativo {
+  background: #62a294;
+}
