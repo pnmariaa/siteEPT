@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Currículos dos alunos do 3º CPM">
   <title>Ver Currículos | 3º CPM</title>
+  <link rel="stylesheet" href="widgets.css">
+  <link rel="stylesheet" href="site-chrome.css">
   <style>
     :root {
       --azul-escuro: #043175;
@@ -360,7 +362,7 @@
   <script src="vercurriculos.js" defer></script>
 </head>
 <body>
-  <header>
+  <header class="site-chrome">
     <nav aria-label="Navegação principal">
       <div class="logo">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnX9Qsb-XcUQ0ERW8JAWr9_ZJSJy-luXU40A&amp;s" alt="Logo do 3º CPM">
@@ -403,6 +405,21 @@
     </section>
   </main>
 
-  <footer>© 2026 Currículos 3º CPM — Todos os direitos reservados.</footer>
+  <footer class="site-footer-standard">
+    <div class="footer-container">
+      <div><h3>Currículos 3º CPM</h3><p>Plataforma para criação de currículos, oportunidades e cursos gratuitos.</p></div>
+      <div class="footer-links"><h3>Links</h3><a href="index.html">Início</a><a href="curriculo.html">Criar Currículo</a><a href="vercurriculos.html">Ver Currículos</a><a href="vagas.html">Vagas</a></div>
+      <div><h3>Contato</h3><p>📧 curriculos3cpm@email.com</p><p>📍 3º CPM</p></div>
+    </div>
+    <hr><p class="copyright">© 2026 Currículos 3º CPM - Todos os direitos reservados.</p>
+  </footer>
+<button class="theme-toggle" type="button" aria-label="Ativar modo escuro" aria-pressed="false">
+      <span class="theme-icon" aria-hidden="true">☀️</span>
+      <span class="theme-track" aria-hidden="true"><span class="theme-thumb"></span></span>
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
+<button class="chatbot" type="button" aria-label="Abrir chat de atendimento"></button>
+<script src="chatbot.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

@@ -6,17 +6,23 @@
   <meta name="description" content="Currículo de estudante do 3º CPM">
   <title>Carregando currículo… | Currículos 3º CPM</title>
   <link rel="stylesheet" href="curriculo-aluno.css">
+  <link rel="stylesheet" href="widgets.css">
+  <link rel="stylesheet" href="site-chrome.css">
   <script src="curriculo-aluno.js" defer></script>
 </head>
 <body>
-  <header class="cabecalho-site">
+  <header class="site-chrome">
     <nav aria-label="Navegação principal">
-      <a class="logo" href="index.html" aria-label="Página inicial dos Currículos 3º CPM">
+      <a class="logo" href="index.html">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnX9Qsb-XcUQ0ERW8JAWr9_ZJSJy-luXU40A&amp;s" alt="">
         <span>Currículos 3º CPM</span>
       </a>
-      <div class="acoes">
-        <a href="vercurriculos.html">← Ver estudantes</a>
+      <div class="menu">
+        <a href="index.html">Início</a>
+        <a href="curriculo.html">Criar Currículo</a>
+        <a class="ativo" href="vercurriculos.html">Ver Currículos</a>
+        <a href="vagas.html">Ver Vagas</a>
+        <a href="certificados.html">Certificados</a>
         <button id="botao-imprimir" type="button">Salvar como PDF</button>
       </div>
     </nav>
@@ -78,5 +84,21 @@
     <p id="mensagem-erro">Não foi possível localizar o estudante solicitado.</p>
     <a href="vercurriculos.html">Voltar para Ver Currículos</a>
   </div>
+  <footer class="site-footer-standard">
+    <div class="footer-container">
+      <div><h3>Currículos 3º CPM</h3><p>Plataforma para criação de currículos, oportunidades e cursos gratuitos.</p></div>
+      <div class="footer-links"><h3>Links</h3><a href="index.html">Início</a><a href="curriculo.html">Criar Currículo</a><a href="vercurriculos.html">Ver Currículos</a><a href="vagas.html">Vagas</a></div>
+      <div><h3>Contato</h3><p>📧 curriculos3cpm@email.com</p><p>📍 3º CPM</p></div>
+    </div>
+    <hr><p class="copyright">© 2026 Currículos 3º CPM - Todos os direitos reservados.</p>
+  </footer>
+<button class="theme-toggle" type="button" aria-label="Ativar modo escuro" aria-pressed="false">
+      <span class="theme-icon" aria-hidden="true">☀️</span>
+      <span class="theme-track" aria-hidden="true"><span class="theme-thumb"></span></span>
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+</button>
+  <button class="chatbot" type="button" aria-label="Abrir chat de atendimento"></button>
+  <script src="chatbot.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
