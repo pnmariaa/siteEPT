@@ -24,7 +24,13 @@
       "Quer contratar um estagiário?",
       "Quero enviar meu currículo",
       "Sobre o 3º CPM",
-      "Informações de turno"
+      "Informações de turno",
+      "Localização do colégio",
+      "Quantidade de estudantes",
+      "Curso profissionalizante",
+      "Sobre o projeto",
+      "Desafio EPT"
+
     ],
 
     rules: [
@@ -63,6 +69,35 @@ Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te
         keywords: ["turno"],
         reply: `O nosso colégio possui alunos em três turnos, sendo eles: Matutino para Ensino Médio regular, Vespertino para Anos Finais (6º ao 9º ano) e Noturno para Ensino Médio integrado com curso técnico de Desenvolvimento de Sistemas.
 Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te ajudar!`
+      },
+      {
+        keywords: ["local", "localização", "localizacao", "onde fica"],
+        reply: `Nosso colégio fica localizado na Av. Minas Gerais, 1295, na região central de Cornélio Procópio. Estamos abertos de segunda a sexta, das 7h às 18h, para atendimento.
+Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`,
+        action: "openMaps"
+      },
+      {
+        keywords: ["quantos alunos", "alunos", "quantidade", "estudantes"],
+        reply: `Nosso colégio tem em torno de 770 a 780 alunos matriculados entre Ensino Fundamental, Ensino Médio Regular e Ensino Médio Profissionalizante.
+Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`,
+        action: "openMaps"
+      },
+      {
+        keywords: ["técnico", "tecnico", "curso", "noturno"],
+        reply: `O nosso Curso Técnico Integrado em Desenvolvimento de Sistemas é uma formação completa com três anos de duração. Ao longo desse período, o estudante cursa todas as disciplinas da Base Nacional Comum Curricular do Ensino Médio Regular e, simultaneamente, mergulha em uma grade focada em tecnologia e preparação prática para o mercado de trabalho.
+
+Nas aulas técnicas, os alunos desenvolvem competências essenciais, como lógica de programação, criação de sistemas, desenvolvimento web e gerenciamento de banco de dados.
+Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
+      },
+      {
+        keywords: ["projeto", "equipe"],
+        reply: `O nosso projeto nasceu da união de alunas dedicadas e focadas em fazer a diferença por meio da tecnologia. A nossa equipe é formada por estudantes do curso técnico que compartilham o mesmo propósito: aplicar o conhecimento adquirido em sala de aula para desenvolver soluções reais, inovadoras e com impacto social. Cada integrante traz uma habilidade única para o grupo, desde a liderança e organização até a programação e o design. Trabalhar em equipe tem sido uma experiência enriquecedora, fortalecendo nossa colaboração e nos preparando para os desafios do mercado de trabalho.
+Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
+      },
+      {
+        keywords: ["desafio", "ept"],
+        reply: `O Desafio EPT (Educação Profissional e Tecnológica) é uma iniciativa incrível que estimula estudantes de cursos técnicos a desenvolverem projetos inovadores e soluções práticas para problemas reais da sociedade. Mais do que uma competição, o desafio é um espaço de aprendizado prático, criatividade e empreendedorismo, onde podemos testar nossas habilidades tecnológicas e de gestão. Participar do Desafio EPT é uma oportunidade única de dar visibilidade ao nosso projeto, receber mentorias e mostrar o potencial da educação pública e técnica.
+Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
       },
       {
         keywords: ["obg", "obrigad", "valeu", "agradeço"],
@@ -140,6 +175,12 @@ Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te
       font-family: inherit;
     }
     .cb-quick-replies button:hover{ background: ${CONFIG.colors.accent}; border-color: ${CONFIG.colors.accent}; }
+    .cb-quick-replies a{
+      display:block; text-align:left; background:#fff; border:1px solid #cabf9e;
+      border-radius:6px; padding:8px 10px; font-size:0.85rem; color:${CONFIG.colors.text};
+      cursor:pointer; font-family:inherit; text-decoration:none;
+    }
+    .cb-quick-replies a:hover{ background:${CONFIG.colors.accent}; border-color:${CONFIG.colors.accent}; color:#fff; }
 
     .cb-input-row{
       display:flex; gap:8px; padding: 10px 12px 12px;
@@ -298,7 +339,7 @@ Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te
     if (matched) {
       botSay(matched.reply, () => {
         if (matched.action === "scrollToCatalog") scrollToCatalog();
-        showEndOrMenuButtons();
+        showEndOrMenuButtons(matched.action === "openMaps");
       });
     } else {
       botSay(CONFIG.fallbackReply, showEndOrMenuButtons);
@@ -306,10 +347,19 @@ Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te
   }
 
   // Depois de cada resposta: só dois botões, em vez do menu inteiro de novo
-  function showEndOrMenuButtons() {
+  function showEndOrMenuButtons(includeMaps = false) {
     clearQuickReplies();
     const wrap = document.createElement("div");
     wrap.className = "cb-quick-replies";
+
+    if (includeMaps) {
+      const mapsLink = document.createElement("a");
+      mapsLink.href = "https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDIPCAIQLhgKGMcBGNEDGIAEMgcIAxAAGIAEMgcIBBAAGIAEMgYIBRBFGDwyBggGEEUYPTIGCAcQRRg90gEIMTAzMmowajSoAgCwAgE&um=1&ie=UTF-8&fb=1&gl=br&sa=X&geocode=KWHFMVNA3-qUMbT_bT0-6cnJ&daddr=Av.+Minas+Gerais,+1295+-+Corn%C3%A9lio+Proc%C3%B3pio,+PR,+86300-000";
+      mapsLink.target = "_blank";
+      mapsLink.rel = "noopener noreferrer";
+      mapsLink.textContent = "📍 Ver no Google Maps";
+      wrap.appendChild(mapsLink);
+    }
 
     const backBtn = document.createElement("button");
     backBtn.type = "button";
