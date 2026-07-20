@@ -36,9 +36,11 @@
     rules: [
       {
         keywords: ["funciona"],
-        reply: `Nosso site disponibiliza duas possibilidades:
-1- Caso seja empresa, você pode visualizar nosso catálogo de alunos dispostos a serem contratados e entrar em contato com eles através de informações disponíveis;
-2- Caso seja aluno, você pode enviar o documento do seu currículo clicando em "Publicar Currículo" ou criar um novo utilizando nossos modelos clicando em "Criar Currículo".
+        reply: `Nosso site disponibiliza algumas possibilidades:
+1- Caso seja empresa, você pode visualizar nosso catálogo de alunos dispostos a serem contratados na página "Ver Currículos" e entrar em contato com eles através de informações disponíveis;
+2- Caso seja aluno, você pode criar um currículo diretamente no nosso site clicando em "Criar Currículo";
+3- Sites que disponibilizam cursus com certificados gratuítos para aprimorar sua carreira no mercado de trabalho;
+4- Vagas disponibilizadas por empresas se houver interesse para nossos alunos entrarem em contato e enviarem seus currículos.
 Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te ajudar!`
       },
       {
@@ -49,16 +51,12 @@ Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te
         action: "scrollToCatalog"
       },
       {
-        // era ["enviar currículo"] — não batia com "Quero enviar MEU currículo"
         keywords: ["currículo"],
         reply: `Ótimo, fico muito feliz com sua decisão e esperamos ajudar você a entrar no mercado de trabalho.
-O processo é bem simples, você tem duas opções em nosso site:
-1- Caso já tenha um currículo pronto, você pode clicar em "Publicar Currículo" e enviar o arquivo. Certifique-se de que ele está atualizado com suas informações pessoais e de contato.
-2- Caso não tenha um currículo pronto, você pode clicar em "Criar Currículo" e utilizar nossos modelos para criar um currículo do zero. Certifique-se de preencher todas as informações necessárias e revisar antes de enviar.
+O processo é bem simples, você pode criar seu currículo diretamente no nosso site clicando em "Criar Currículo" e preenchendo as informações solicitadas. Após isso, você poderá visualizar seu currículo e compartilhá-lo com empresas interessadas.
 Espero ter conseguido te ajudar! Se precisar de mais algo, estarei disposta a te ajudar!`
       },
       {
-        // era ["sobre 3º cpm"] — não batia com "Sobre O 3º CPM"
         keywords: ["cpm"],
         reply: `O 3º Colégio da Polícia Militar do Paraná foi criado como um órgão de apoio à Polícia Militar do Paraná e como um estabelecimento de ensino formal, pelo Decreto Governamental nº 11.334 de 15 de outubro de 2018.
 Publicado no Diário Oficial nº 10.294 da mesma data, o colégio iniciou oficialmente suas atividades no dia 04 de fevereiro de 2019.
@@ -79,8 +77,7 @@ Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`,
       {
         keywords: ["quantos alunos", "alunos", "quantidade", "estudantes"],
         reply: `Nosso colégio tem em torno de 770 a 780 alunos matriculados entre Ensino Fundamental, Ensino Médio Regular e Ensino Médio Profissionalizante.
-Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`,
-        action: "openMaps"
+Espero ter ajudado. Caso precise de mais alguma coisa, estou à disposição!`
       },
       {
         keywords: ["técnico", "tecnico", "curso", "noturno"],
