@@ -55,31 +55,41 @@
       <section class="curriculo">
         <h1>Crie seu currículo</h1>
 
-        <label>Nome completo</label>
-        <input type="text">
+        <form action="https://formspree.io/f/xeeykpoe" method="POST">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome_completo" placeholder="Digite seu nome completo" required>
 
-        <label>E-mail</label>
-        <input type="email">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
 
-        <label>Curso</label>
-        <input type="text">
+          <label for="linkedin">LinkedIn</label>
+          <input type="url" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/seu-perfil">
 
-        <label>Ano</label>
-        <input type="text">
+          <label for="github">GitHub</label>
+          <input type="url" id="github" name="github" placeholder="https://github.com/seu-usuario">
 
-        <label>Telefone</label>
-        <input type="tel">
+          <label for="curso">Curso</label>
+          <input type="text" id="curso" name="curso" placeholder="Digite o nome do seu curso" required>
 
-        <label>Habilidades</label>
-        <textarea></textarea>
+          <label for="ano">Ano</label>
+          <input type="text" id="ano" name="ano" placeholder="Exemplo: 2º ano" required>
 
-        <label>Experiências</label>
-        <textarea></textarea>
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
 
-        <label>Objetivo profissional</label>
-        <textarea></textarea>
+          <label for="habilidades">Habilidades</label>
+          <textarea id="habilidades" name="habilidades" rows="5" placeholder="Exemplo: comunicação, trabalho em equipe, HTML, CSS..." required></textarea>
 
-        <button>Salvar currículo</button>
+          <label for="experiencias">Experiências</label>
+          <textarea id="experiencias" name="experiencias" rows="6" placeholder="Descreva suas experiências profissionais, projetos ou trabalhos escolares."></textarea>
+
+          <label for="objetivo">Objetivo profissional</label>
+          <textarea id="objetivo" name="objetivo_profissional" rows="5" placeholder="Descreva seu objetivo profissional." required></textarea>
+
+          <input type="hidden" name="_subject" value="Novo currículo enviado pelo site">
+
+          <button type="submit">Salvar currículo</button>
+        </form>
       </section>
     </main>
 
